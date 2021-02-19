@@ -3,6 +3,7 @@ title: "Dry Lab"
 description: |
   Online public workspace
 favicon: images/favicon.png
+google_analytics: "G-TP31B5X2Z4"
 theme: jp.css
 base_url: https://joshpeters.github.io/
 repository_url: https://github.com/joshpeters/joshpeters
