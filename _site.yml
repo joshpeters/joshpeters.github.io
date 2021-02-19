@@ -1,0 +1,26 @@
+name: "joshpeters"
+title: "Dry Lab"
+description: |
+  Online public workspace
+favicon: images/favicon.png
+theme: jp.css
+base_url: https://joshpeters.github.io/
+repository_url: https://github.com/joshpeters/joshpeters
+twitter:
+  site: "@joshpetepeters"
+output_dir: "docs"
+navbar:
+  left:
+    - icon: fas fa-coffee
+      href: index.html
+  right:
+    - text: "Blog"
+      href: blog.html
+    - text: "Who?"
+      href: about.html
+  search: false
+output: distill::distill_article
+collections:
+  posts:
+    citations: true
+    feed_items_max: 2

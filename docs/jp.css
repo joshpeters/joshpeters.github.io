@@ -1,0 +1,195 @@
+
+/* base variables */
+
+/* Edit the CSS properties in this file to create a custom
+   Distill theme. Only edit values in the right column
+   for each row; values shown are the CSS defaults.
+   To return any property to the default,
+   you may set its value to: unset
+   All rows must end with a semi-colon.                      */
+
+/* Optional: embed custom fonts here with `@import`          */
+/* This must remain at the top of this file.                 */
+
+@import url('https://use.typekit.net/roy6adf.css')
+
+html {
+  /*-- Main font sizes --*/
+  --title-size:      2rem;
+  --body-size:       1.1rem;
+  --code-size:       1rem;
+  --aside-size:      1rem;
+  --fig-cap-size:    1rem;
+  /*-- Main font colors --*/
+  --title-color:     #fffffe;
+  --header-color:    #fffffe;
+  --body-color:      #94a1b2;
+  --aside-color:     #fffffe;
+  --fig-cap-color:   #fffffe;
+  /*-- Specify custom fonts ~~~ must be imported above   --*/
+  --heading-font:    "neue-haas-grotesk-display", sans-serif;
+  --mono-font:       monospace;
+  --body-font:       "neue-haas-grotesk-text", sans-serif;
+  --navbar-font:     "neue-haas-grotesk-display", sans-serif;
+}
+
+
+/*-- ARTICLE METADATA --*/
+
+d-article {
+  --title-color:     #fffffe;
+  --header-color:    #fffffe;
+  --body-color:      #94a1b2;
+  --heading-font:    "neue-haas-grotesk-display", sans-serif;
+  --mono-font:       monospace;
+  --body-font:       "neue-haas-grotesk-text", sans-serif;
+  --navbar-font:     "neue-haas-grotesk-display", sans-serif;
+}
+
+d-title {
+  --title-color: #fffffe;
+  margin-top: 4rem;
+}
+
+d-byline {
+  --heading-size:    0.6rem;
+  --heading-color:   #2cb67d;
+  --body-size:       0.8rem;
+  --body-color:      #fffffe;
+}
+
+/*-- ARTICLE TABLE OF CONTENTS --*/
+.d-contents {
+  --heading-size:    0.8rem;
+  --contents-size:   0.6rem;
+}
+
+/*-- ARTICLE APPENDIX --*/
+d-appendix {
+  --heading-size:    1rem;
+  --heading-color:   #fffffe;
+  --text-size:       0.8rem;
+  --text-color:      #fffffe;
+  --heading-font:    "neue-haas-grotesk-display", sans-serif;
+  --mono-font:       monospace;
+  --body-font:       "neue-haas-grotesk-text", sans-serif;
+  --navbar-font:     "neue-haas-grotesk-display", sans-serif;
+  border-top-color:  #fffffe;
+}
+
+/*-- WEBSITE HEADER + FOOTER --*/
+/* These properties only apply to Distill sites and blogs  */
+
+.distill-site-header {
+  --title-size:       1.5rem;
+  --text-color:       #fffffe; /* edited */
+  --text-size:        1.5rem;
+  --hover-color:      #7f5af0; /* edited */
+  --bkgd-color:       #16161a; /* edited */
+}
+
+.distill-site-footer {
+  --text-color:       #fffffe;
+  --text-size:        0.8rem;
+  --bkgd-color:       #16161a;
+}
+
+/*-- Additional custom styles --*/
+/* Add any additional CSS rules below                      */
+
+html, body, p, h1, h2, h3, h4, h5, h6 {
+  background-color: #16161a;
+  color: #fffffe;
+  font-family: "neue-haas-grotesk-text", sans-serif;
+}
+
+.distill-site-header {
+  padding-top: 1rem;
+}
+
+.distill-site-header .logo img{
+  margin-left: 2rem;
+  max-height: 1.5rem;
+}
+
+.distill-site-header .nav-right {
+  margin-right: 2rem;
+}
+
+.distill-site-header .nav-left {
+  color: #2d2d34;
+  text-transform: uppercase;
+}
+
+.distill-site-nav .nav-left a:hover {
+  cursor: default;
+  color: #2d2d34;
+}
+
+.distill-site-footer {
+  padding: 2rem 8rem 2rem 8rem;
+}
+
+d-article a, d-appendix a {
+  color: #fffffe;
+  border-bottom-color: #2cb67d;
+}
+
+.hero {
+  text-align: left;
+  margin: 8rem 2rem 2rem 2rem;
+}
+
+.dt-tags .dt-tag {
+  border-color: #2cb67d;
+  color: #2cb67d;
+}
+
+.posts-container {
+  margin: 2rem 4rem 2rem 4rem;
+}
+
+.posts-list .dt-tags .dt-tag {
+  border-color: #2cb67d;
+  color: #2cb67d;
+}
+
+.categories .category-count {
+  color: #7f5af0;
+}
+
+.hero-p1 {
+  font-family: "neue-haas-grotesk-display", sans-serif;
+  font-size: 3.6rem;
+  font-weight: 400;
+  color: #fffffe;
+}
+
+.hero-p2 {
+  font-family: "neue-haas-grotesk-display", sans-serif;
+  font-weight: 400;
+  color: #fffffe;
+  font-size:1.8rem;
+}
+
+.hero-p3 {
+  font-family: "neue-haas-grotesk-display", sans-serif;
+  font-weight: 400;
+  color: #94a1b2;
+  font-size: 1.2rem;
+}
+
+.highlight-a {
+  color: #2cb67d;
+  font-weight: 700;
+}
+
+.highlight-b {
+  color: #f25f4c;
+  font-weight: 700;
+}
+
+.btn-outline-dark {
+  color: #fffffe;
+  border-color: #fffffe;
+}

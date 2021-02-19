@@ -1,0 +1,17 @@
+[
+  {
+    "path": "posts/2021-01-04-building-this-website/",
+    "title": "Building this website",
+    "description": "A new online business card of sorts",
+    "author": [],
+    "date": "2021-02-18",
+    "categories": [
+      "Design",
+      "Networking"
+    ],
+    "contents": "\nContent\nAs I enter the final years of graduate school, I decided to build a website as a professional landing page. blogdown was a likely candidate, but ended up deciding on distill due to similar functionality and an opinionated framework I enjoyed. Despite less design flexibility, I was still able to tweak it a bit to a preferred dark theme.\nI’ve written semi-frequently in the past for Massive Science and hope to continue some personal musings here. I imagine it will move away from public interest and towards emerging biotechnology: startups, venture capital, etc.\nResources and Inspo\n Alison Hill’s tutorial on using postcards with distill.\n Thomas Mock’s tutorial.\n Maggie Appleton’s website. Beautiful color scheme and typography. Unique copy. Calming simplicity.\n Alison Hill’s website. Academic information with typical pages. Biography-based landing page. Great color scheme. Relevant content.\n\n\n\n",
+    "preview": {},
+    "last_modified": "2021-02-18T21:48:25-05:00",
+    "input_file": {}
+  }
+]

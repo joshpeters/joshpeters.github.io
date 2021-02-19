@@ -1,0 +1,17 @@
+---
+title: ""
+output:
+  distill::distill_article:
+    self-contained: false
+site: distill::distill_website
+css: [jp.css]
+listing: posts
+---
+
+<div class='hero' style="">
+
+<h1 class="hero-p1">Josh Peters</h1>
+<h3 class="hero-p2">Researches the causes + consequences of <span class="highlight-a">macrophage diversity</span> in lung diseases with a focus on the tissue milieu and tuberculosis.</h3>
+<p class="hero-p3">Ph.D. Student at [MIT Biological Engineering](https://be.mit.edu/) with [Bryan Bryson](https://be.mit.edu/directory/bryan-bryson) and [Paul Blainey](https://www.broadinstitute.org/bios/paul-blainey). Affiliated with the [Broad Institute](https://www.broadinstitute.org/) and [Ragon Institute](https://www.ragoninstitute.org/).</p>
+
+</div>

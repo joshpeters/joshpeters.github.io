@@ -1,0 +1,9 @@
+---
+title: "Blog"
+description: |
+  Ideas and Resources
+output:
+  distill::distill_article:
+    self-contained: false
+listing: posts
+---
