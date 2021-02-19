@@ -14,6 +14,6 @@ output:
   postcards::jolla
 ---
  
-Hey there, I'm currently a student at MIT working towards a PhD in biological engineering. I utilize single-cell technologies to investigate macrophage diversity motivated clinically by tuberculosis. I'm a 4th year student interested in a few possibilities post-defense: a short-term focused post-doc, VC, or cool science at a startup.
+Hey there, I'm currently a student at MIT working towards a PhD in biological engineering. I utilize single-cell technologies to investigate macrophage diversity in tuberculosis and as a function of the milieu. Broadly, I follow immunology, infectious disease, and cell engineering research closely. I'm a 4th year student interested in a few possibilities post-defense: a short-term focused post-doc, VC, or cool science at a startup.
 
 Regardless of how you came across this website, reach out and let's connect.
