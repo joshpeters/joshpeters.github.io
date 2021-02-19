@@ -94,23 +94,25 @@ umap$fund <- tickers
 umap$color <- ifelse(grepl("ARKG|GNOM|IDNA|HELX|GERM|CNCR|BBP", umap$fund), TRUE, FALSE)
 umap %>% 
   ggplot(aes(x = V1, y = V2, fill = color)) +
-  geom_point(shape = 21, color = "black", size = 3, alpha = 0.8) +
-  ggthemes::scale_fill_colorblind(name = "Biotech.\nThemed") +
+  geom_point(shape = 21, color = "black", size = 2, alpha = 0.8) +
+  scale_fill_manual(values = c("gray60", "darkred")) +
   theme_minimal(18) +
   theme(
     panel.border = element_rect(size = 1, color = "black", fill = "transparent"),
-    legend.position = c(0.9, 0.8),
+    legend.position = "none",
+    axis.title.y = element_text(hjust = 0),
+    axis.title.x = element_text(hjust = 0),
     panel.grid = element_blank(),
     axis.text = element_blank(),
     axis.ticks = element_blank(),
-    plot.caption = element_text(hjust = 0),
+    plot.caption = element_text(color = "gray60", hjust = 0, margin = margin(12, 0, 0, 0)),
     plot.subtitle = element_text(color = "gray60")
   ) +
   labs(x = "UMAP1", 
        y = "UMAP2", 
-       title = "Embedding of ETF compositions", 
+       title = "ETF composition embedding", 
        subtitle = "As of 2021-02-12", 
-       caption = "Each point represents an ETF\nSelected ETFs: ARKG, IDNA, GNOM")
+       caption = "Each point represents an ETF\nHighlighted ETFs: ARKG, IDNA, GNOM")
 
 
 ```
