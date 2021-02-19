@@ -1,0 +1,150 @@
+---
+title: "The landscape of biotechnology ETFs"
+description: |
+  Exploring stock pickers' view of value in biotechnology
+author: Josh Peters
+date: 02-18-2021
+output:
+  distill::distill_article:
+    self_contained: false
+draft: true
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r setup, include=FALSE}
+
+knitr::opts_chunk$set(echo = FALSE)
+library(tidyverse)
+library(glue)
+library(tidyquant)
+root <- "/Users/jpeters/Downloads"
+
+```
+
+Genomic Revolution (ARKG) is a high-performing ETF listed among the popular thematic ARK Invest ETFs. It has recently provided enormous returns, prompting large inflows. ARKG states portfolio companies focus on the following technology areas: DNA sequencing, gene editing, targeted therapeutics, bioinformatics, and agricultural biology.
+
+After listening to ARK’s Head of Research, their approach is attractive, simple, and focused on the underlying companies’ 5-year potentials. His sentiment echoed much of the value investing ethos of Graham mixed with General Purpose Technology theory and a comforting humility. The idea here is that ARKG’s holdings will likely fall into two bins: unique golden tickets, or consensus picks. This assumes independence between funds and, while that probably isn’t true, I assume here that funds have their own autonomous reasons for choosing their portfolio. 
+
+Given the hype around ARK Invest’s thematic ETFs, I wanted to visualize where these ETFs reside compared to other ETFs. To do so, I prepared a description of all ETFs’ holdings and performance (1-year alpha and beta).
+
+```{r echo=TRUE}
+# load data
+data <- read_csv(glue("{root}/ConstituentData42.csv"))
+head(data)
+colnames(data)
+data <- janitor::clean_names(data)
+data <- data[, c("sponsor", "composite_ticker", "composite_name", "constituent_ticker",
+                 "constituent_name", "weighting", "date", "last_trade", "bloomberg_symbol",
+                 "naics_sector", "naics_sub_industry", "market_cap", "earnings",
+                 "pe_ratio", "dividend_amt", "dividend_yield")]
+head(data)
+```
+
+We first notice how messy this data is, ergo we clean up the critical columns.
+```{r echo=TRUE}
+
+data <- data[!is.na(data$constituent_ticker), ]
+data$constituent_ticker <- gsub("[^\u0001-\u007F]+|<U\\+\\w+>","", data$constituent_ticker)
+data <- data[data$constituent_ticker != "", ]
+data <- data[data$weighting != "parent", ]
+data <- data[!grepl("CASH", data$constituent_ticker), ]
+data <- data[!grepl("Cash", data$constituent_ticker), ]
+data$weighting <- as.numeric(as.character(data$weighting))
+data <- data[grepl("^[A-Z]{1,8}:US$", data$bloomberg_symbol), ]
+
+weights <- data %>% group_by(composite_ticker) %>% summarize(sum = sum(weighting))
+data <- data %>% group_by(composite_ticker) %>% mutate(total_weight = sum(weighting), norm_weight = weighting/total_weight)
+flagged <- unique(data$composite_ticker[data$norm_weight >= 1 | data$norm_weight <= 0])
+data <- data %>% filter(!composite_ticker %in% flagged)
+flagged <- unique(data$composite_ticker[is.na(data$norm_weight)])
+data <- data %>% filter(!composite_ticker %in% flagged)
+length(unique(data$composite_ticker))
+
+data <- data %>% group_by(composite_ticker) %>% mutate(n = n())
+hist(data$n)
+
+long_mtx <- data %>% 
+  filter(n <= 60) %>% 
+  select(composite_ticker, bloomberg_symbol, norm_weight) %>% 
+  distinct() %>% 
+  unite("ticker", composite_ticker, bloomberg_symbol, remove = FALSE) %>%
+  group_by(ticker) %>% 
+  top_n(1, norm_weight)
+
+# long_mtx <- long_mtx %>% 
+#   
+#    %>%
+#   group_by(composite_ticker)
+wide <- data.table::dcast(long_mtx, composite_ticker ~ bloomberg_symbol, value.var = "norm_weight", fill = 0)
+tickers <- wide[, 1, drop = T]
+wide[1:5, 1:5]
+range(wide[, -1])
+colnames(wide)
+wide <- sapply(wide[, -1], as.numeric)
+dim(wide)
+
+#vars <- apply(wide, 2, var)
+#top_stocks <- names(sort(vars, decreasing = TRUE))[1:1000]
+pca <- prcomp(wide, scale = F, rank. = 100)
+umap <- uwot::umap(pca$x[, 1:100], n_neighbors = 20, spread = 2, min_dist = 0.2)
+umap <- uwot::umap(wide, n_neighbors = 20, spread = 2, min_dist = 0.2)
+umap <- as.data.frame(umap)
+umap$fund <- tickers
+umap$color <- ifelse(grepl("ARKG|GNOM|IDNA|HELX|GERM|CNCR|BBP", umap$fund), TRUE, FALSE)
+umap %>% 
+  ggplot(aes(x = V1, y = V2, fill = color)) +
+  geom_point(shape = 21, color = "black", size = 3, alpha = 0.8) +
+  ggthemes::scale_fill_colorblind(name = "Biotech.\nThemed") +
+  theme_minimal(18) +
+  theme(
+    panel.border = element_rect(size = 1, color = "black", fill = "transparent"),
+    legend.position = c(0.9, 0.8),
+    panel.grid = element_blank(),
+    axis.text = element_blank(),
+    axis.ticks = element_blank(),
+    plot.caption = element_text(hjust = 0),
+    plot.subtitle = element_text(color = "gray60")
+  ) +
+  labs(x = "UMAP1", 
+       y = "UMAP2", 
+       title = "Embedding of ETF compositions", 
+       subtitle = "As of 2021-02-12", 
+       caption = "Each point represents an ETF\nSelected ETFs: ARKG, IDNA, GNOM")
+
+
+```
+
+
+
+```{r echo=TRUE}
+# load etf information
+etfs <- read_csv(glue("{root}/AllTypes.csv"), col_names = FALSE)
+etfs <- etfs[, -4]
+colnames(etfs) <- c("name", "ticker", "index")
+
+# define funds of interest
+thematic_funds <- c("ARKG", "HELX", "GNOM",
+                    "PBE", "PTH", "IDNA",
+                    "FBT", "BBH", "BBC",
+                    "IBB", "BBP",
+                    "CNCR", "GERM", "XBI")
+
+```
+
+
+
+
+
+First, to visualize the compositional ETF data, we utilized UMAP to embed the composition of thematic ETFs, emphasized by restricting our list to funds with less than 100 holdings, in a two-dimensional representation. This beautifully informs an intuition about the ETF market landscape (Figure 1A). When we overlay 1-year alpha, we can also perceive a degree of performance spatial autocorrelation (Figure 1B).
+
+We can also utilize these compositional data to identify nearest-neighbors, similar to how Spotify suggests new music for you. As we’d expect, GNOM and IDNA are similarly embedded (Figure 2A). Using this information along with personally curated funds, we extract funds of interest and analyze their holdings more specifically (Figure 2B). Now, we want to learn from comparing ARKG with other similar funds. 
+
+First, we can ask what stocks are most popular amongst these funds? For this question, we extract companies held by a majority of funds. Interestingly, we see a slight positive trend in weight as the number of funds owning that stock increases – perhaps suggesting a consensus strong outlook on the stock performance (Figure 3A).
+
+Second, we can ask what companies are differentiating ARKG currently? For this question, we simply extract holdings that are unique to ARKG in terms of weight or ownership (Figure 3B). We can apply this generally and focus on companies with a substantial weight (defined as median + 1 median absolute deviation) in the respective fund to identify highly differentiable companies across biotechnology ETFs (Figure 3C). It may be worthwhile to dig into funds’ theses about these companies. 
+
+We’ve compiled compositional data of ETFs, focused on biotechnology and related themes, and extracted a set of particular equities selected uniquely or collectively. Much more to dive into from here, but a broad look at ETF holdings in my field is a good start for my foray in finance.
+
+*Disclosures*  
+This article expresses my own personal opinions. I am receiving no compensation for it and have no relationship with companies discussed. Nothing discussed is a recommendation to buy, sell, or hold any particular security. I am long ARKG.

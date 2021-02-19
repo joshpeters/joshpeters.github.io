@@ -2,6 +2,7 @@
 title: "Building this website"
 description: |
   A new online business card of sorts
+author: Josh Peters
 date: 02-18-2021
 categories:
   - Design
