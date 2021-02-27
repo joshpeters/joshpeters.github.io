@@ -146,7 +146,7 @@ sum_tickers$mean[is.nan(sum_tickers$mean)] <- 7
 b <- ggplot(data = sum_tickers, 
             mapping = aes(x = mean, y = weight, size = n, tooltip = bloomberg_symbol, data_id = bloomberg_symbol)) +
   geom_point_interactive(shape = 21, color = "black", stroke = 0.75, fill = "gray80", alpha = 0.5) +
-  scale_size_continuous(range = c(1, 4)) +
+  scale_size_continuous(range = c(1, 4), name = "# ETFs\nholding") +
   scale_x_continuous(labels = c("Missing", 8, 9, 10, 11, 12)) +
   scale_y_continuous(labels = scales::percent_format(accuracy = 1)) +
   labs(x = "log10(Market Cap $USD)", y = "Median weight",
