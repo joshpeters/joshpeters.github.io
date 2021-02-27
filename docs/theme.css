@@ -193,3 +193,7 @@ d-article a, d-appendix a {
   color: #fffffe;
   border-color: #fffffe;
 }
+
+d-article {
+  color: #fffffe;
+}
