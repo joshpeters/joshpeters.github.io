@@ -95,8 +95,8 @@ umap$color <- ifelse(grepl("ARKG|GNOM|IDNA|HELX", umap$fund), TRUE, FALSE)
 umap <- umap %>% arrange(color)
 a <- umap %>% 
   ggplot(aes(x = V1, y = V2, fill = color, tooltip = fund, data_id = fund)) +
-  geom_point_interactive(dat = umap %>% filter(color == FALSE), shape = 21, color = "black", size = 2, alpha = 0.6) +
-  geom_point_interactive(dat = umap %>% filter(color == TRUE), shape = 21, color = "black", size = 3, alpha = 0.6) +
+  geom_point_interactive(dat = umap %>% filter(color == FALSE), shape = 21, color = "black", size = 1, alpha = 0.6) +
+  geom_point_interactive(dat = umap %>% filter(color == TRUE), shape = 21, color = "black", size = 2, alpha = 0.6) +
   scale_fill_manual(values = c("#94A1B2", "#2DB67D")) +
   theme_minimal(18) +
   theme(
@@ -145,7 +145,7 @@ funds_str <- paste0(thematic_funds, collapse = ", ")
 sum_tickers$mean[is.nan(sum_tickers$mean)] <- 7
 b <- ggplot(data = sum_tickers, 
             mapping = aes(x = mean, y = weight, size = n, tooltip = bloomberg_symbol, data_id = bloomberg_symbol)) +
-  geom_point_interactive(shape = 21, color = "black", stroke = 0.75, fill = "gray80", alpha = 0.5) +
+  geom_point_interactive(shape = 21, color = "black", stroke = 0.75, fill = "#94A1B2", alpha = 0.5) +
   scale_size_continuous(range = c(1, 4), name = "# ETFs\nholding") +
   scale_x_continuous(labels = c("Missing", 8, 9, 10, 11, 12)) +
   scale_y_continuous(labels = scales::percent_format(accuracy = 1)) +
