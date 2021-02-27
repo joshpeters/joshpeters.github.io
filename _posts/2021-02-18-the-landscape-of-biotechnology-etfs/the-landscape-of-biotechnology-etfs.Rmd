@@ -31,7 +31,7 @@ root <- "/Users/jpeters/Downloads"
 ## The Genomic Revolution  
 Genomic Revolution (ARKG) is a high-performing ETF listed among the popular thematic ARK Invest ETFs. It has recently provided enormous returns, prompting large inflows. ARKG states portfolio companies focus on the following technology areas: DNA sequencing, gene editing, targeted therapeutics, bioinformatics, and agricultural biology.
 
-After listening to ARK’s Head of Research, their approach is attractive, simple, and focused on the underlying companies’ 5-year potentials. His sentiment echoed much of the value investing ethos of Graham mixed with General Purpose Technology theory and a comforting humility. The idea here is that ARKG’s holdings will likely fall into two bins: unique golden tickets, or consensus picks. This assumes independence between funds and, while that probably isn’t true, I assume here that funds have their own autonomous reasons for choosing their portfolio. 
+After listening to ARK’s Head of Research, their approach is attractive, simple, and focused on the underlying companies’ 5-year potentials. His sentiment echoed much of the value investing ethos of Graham mixed with General Purpose Technology theory and a comforting humility. The idea here is that ARKG’s holdings will likely fall into two bins: unique golden tickets or consensus picks. This assumes independence between funds and, while that probably isn’t true, I assume here that funds have their own autonomous reasons for choosing their portfolio. 
 
 Given the hype around ARK Invest’s thematic ETFs, I wanted to visualize where these ETFs reside compared to other ETFs. To do so, I prepared a description of all ETFs’ holdings and performance (1-year alpha and beta). Data is downloaded from [masterdatareports.com](https://masterdatareports.com/).
 
@@ -113,7 +113,7 @@ a <- umap %>%
   labs(x = "UMAP1", 
        y = "UMAP2", 
        title = "ETF composition embedding", 
-       subtitle = "As of 2021-02-12", 
+       subtitle = "As of 2021-02-19", 
        caption = "Each point represents an ETF\nHighlighted ETFs: ARKG, IDNA, GNOM, HELX")
 
 girafe(ggobj = a)
