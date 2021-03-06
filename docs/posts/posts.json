@@ -1,5 +1,27 @@
 [
   {
+    "path": "posts/2021-03-06-upcoming/",
+    "title": "Upcoming",
+    "description": "A preview/to-do list of new posts",
+    "author": [
+      {
+        "name": "Josh Peters",
+        "url": {}
+      }
+    ],
+    "date": "2021-03-05",
+    "categories": [
+      "Industry",
+      "Finance",
+      "Design",
+      "Networking"
+    ],
+    "contents": "\n\nContents\nUpcoming and target articles\n\nUpcoming and target articles\nHow VC works (with a focus on biotechnology)\nBiotechnology valuation for scientists\nTop VC funds and holdings\n\n\n\n",
+    "preview": {},
+    "last_modified": "2021-03-06T09:29:08-05:00",
+    "input_file": {}
+  },
+  {
     "path": "posts/2021-02-18-the-landscape-of-biotechnology-etfs/",
     "title": "The landscape of biotechnology ETFs",
     "description": "Exploring stock pickers' view of value in biotechnology",

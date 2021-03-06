@@ -12,7 +12,20 @@
       <link>https://joshpeters.github.io/</link>
     </image>
     <generator>Distill</generator>
-    <lastBuildDate>Sat, 27 Feb 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 05 Mar 2021 00:00:00 +0000</lastBuildDate>
+    <item>
+      <title>Upcoming</title>
+      <dc:creator>Josh Peters</dc:creator>
+      <link>https://joshpeters.github.io/posts/2021-03-06-upcoming</link>
+      <description>&lt;p&gt;A preview/to-do list of new posts&lt;/p&gt;
+</description>
+      <category>Industry</category>
+      <category>Finance</category>
+      <category>Design</category>
+      <category>Networking</category>
+      <guid>https://joshpeters.github.io/posts/2021-03-06-upcoming</guid>
+      <pubDate>Fri, 05 Mar 2021 00:00:00 +0000</pubDate>
+    </item>
     <item>
       <title>The landscape of biotechnology ETFs</title>
       <dc:creator>Josh Peters</dc:creator>

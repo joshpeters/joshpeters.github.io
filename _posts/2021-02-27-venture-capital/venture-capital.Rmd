@@ -12,9 +12,96 @@ output:
 draft: true
 ---
 
+How does Venture Capital work?
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = FALSE)
-```
+3 parts of a "firm"
+
+1. Management Company
+2. Limited partnership vehicle
+3. General partnership
+
+Management ("the franchise") and funds are separated.
+
+VCs raise funds through limited partnership agreements (LPAs). "Bosses" of VCs are the limited partners.
+When VCs need to make an investment, they put out a capital call to their LPs. Rarely do LPs not fulfill the call.
+
+The franchise gets paid through management fees (1.5-2.5%). Fee is typically paid during commitment period, or when VC firms make their investments within the first 5 years usually. Generally, it amounts to $15M over 10 years given $100M raised funds. VC firm size doesn't usually increase proportional to funds raised, so partners' pockets increase.
+
+These funds are small compared to the carried interest or carry. Carry is a percent of the profit after returning LP funds. If a fund makes $300M on $100M, the extra $200M is split 80/20 between the LPs and the firm given a 20% carry agreement. Carry is not equal across the firm. These ratios are known as the 2/20 rule.
+
+Portfolios typically follow a power law distribution.
+
+GPs also invest 1-5% into their own funds. 
+
+The final challenge is when the firm performs poorly. Carry taken during the period of the fund may be subject to "clawback" if the firm doesn't perform past the initial funds raised. 
+
+The investment term is the lifetime of the fund – 10 years plus extensions. 
+VC firms selling their portfolios is a secondary sale and can complicate matters significantly for the invested companies.
+
+Reserves are funds allocated internally within the firm for follow-ons (subsequent investment rounds) of portfolio companies. Earlier stage companies may have larger reserves.
+
+VCs typically and are allowed to raise a new fund when they are around 70% committed and reserved. 
+
+Picking good investments, managing reserves, and raising new funds strategically that satisfies both the fund and the LPs is the key bread and butter here. "VCs owe fiduciary duties, concurrently and on the same importancelevel, to their management company, to the GP, to the LP, and toeach board that they serve on."
+
+# Personnel structure
+Partners (Venture, general, managing)
+Principals
+Associates
+Analysts
+Limited partners (LPs)
+
+# Money sources
+- Insurance companies,
+- Banks,
+- Family offices
+- Funds of funds
+- Foundations, endowments
+- Pension funds
+- High net worth individuals
+
+# Biotechnology VCs of interest
+- 8VC
+- ARCH
+- Canaan
+- Sofinnova
+- Flagship Pioneering
+- Life Science Partners
+- New Enterprise Associates
+- Morningside
+- Column Group
+- Third Rock
+- Data Collective (DCVC)
+- Versant
+- 5AM
+- Atlas
+- Orbimed
+- F-Prime Capital
+- Apple Tree
+- Vida Ventures
+- Leaps by Bayer
+- AbbVie Ventures
+
+
+https://informaconnect.com/12-vcs-who-matter-in-biotech-but-you-never-read-about/
+https://www.baybridgebio.com/blog/top_vcs_2018.html
+https://www.genengnews.com/a-lists/20-top-vc-firms-for-biotechs/
+
+
+- Venture Deals - Be Smarter Than Your Lawyer And Venture Capitalist. Brad Feld, Jason Mendelson  
+- https://www.forbes.com/sites/alejandrocremades/2018/08/02/how-venture-capital-works/?sh=2ea80af51b14  
+- https://medium.com/impression-ventures/how-does-a-vc-firm-work-22f32f9099ad
+- https://visible.vc/blog/understanding-the-power-law-curve-of-vc/
+- https://medium.com/ulu-ventures/successful-vcs-need-at-least-one-outlier-to-have-a-well-performing-fund-c122c799dfb3
+- https://angel.co/blog/what-angellist-data-says-about-power-law-returns-in-venture-capital
+- https://a16z.com/2015/06/08/performance-data-and-the-babe-ruth-effect-in-venture-capital/
+- https://michaeltefula.com/what-drives-power-laws/
+- https://marginalfutility.substack.com/p/the-power-law-in-venture-capital
+- https://hbr.org/1998/11/how-venture-capital-works
+- http://www.angelblog.net/Venture_Capital_Funds_How_the_Math_Works.html
+- https://techcrunch.com/2017/06/01/the-meeting-that-showed-me-the-truth-about-vcs/
+- https://finance.zacks.com/small-vs-large-company-domestic-stock-portfolio-allocation-9207.html
+- https://www.industryventures.com/the-venture-capital-risk-and-return-matrix/
+
 
 

@@ -1,0 +1,26 @@
+---
+title: "Upcoming"
+description: |
+  A preview/to-do list of new posts
+author: Josh Peters
+date: 03-05-2021
+categories:
+  - Industry
+  - Finance
+  - Design
+  - Networking
+output:
+  distill::distill_article:
+    code_folding: false
+    self_contained: false
+    toc: true
+draft: false
+editor_options: 
+  chunk_output_type: console
+---
+
+# Upcoming and target articles  
+
+- How VC works (with a focus on biotechnology)
+- Biotechnology valuation for scientists
+- Top VC funds and holdings
